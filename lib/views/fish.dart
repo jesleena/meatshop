@@ -52,24 +52,22 @@ class fish_page extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),),),
                   ),
-                  Expanded(
-                    child: Container(
-                        width: 170,
-                    
-                        child: Column(children: [
-                          Text(currentProduct.name),
-                          Text('Rs ${currentProduct.price}/-'),
-                    
-                          ElevatedButton(
-                              onPressed: () {
-                                context.read<ProductProvider>().addToList(currentProduct);
-                                //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Cart()));
-                              },
-                              child:
-                              Text("Add ",style: Theme.of(context).textTheme.bodySmall) ),
-                    
-                        ])),
-                  ),
+                  Container(
+                      width: 170,
+
+                      child: Column(children: [
+                        Text(currentProduct.name),
+                        Text('Rs ${currentProduct.price}/-'),
+
+                        ElevatedButton(
+                            onPressed: () {
+                              context.read<ProductProvider>().addToList(currentProduct);
+                              //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Cart()));
+                            },
+                            child:
+                            Text("Add ",style: Theme.of(context).textTheme.bodySmall) ),
+
+                      ])),
 
                 ],), );
 

@@ -35,6 +35,7 @@ List<Product> readytocookList = [
 
 class ProductProvider extends ChangeNotifier {
   int? tprice=0;
+  int total = 0;
   final List<Product> _fish = fishList;
   List<Product> get fish => _fish; //getter to access list of fish in home page
 
@@ -52,16 +53,19 @@ class ProductProvider extends ChangeNotifier {
   final List<Product> _cart = [];
   List<Product> get cart => _cart;
 
-  int total = 0;
+
 
   void addToList(Product productfromMain) {
-    int index = _cart.indexWhere((element) => element == productfromMain);
-    if (index != -1) {
-      _cart[index].count = _cart[index].count + 1;
+   // int index = _cart.indexWhere((element) => element == productfromMain);
+   // if (index != -1) {
+     // _cart[index].count = _cart[index].count + 1;
+      if ( productfromMain.count!=0) {
+        productfromMain.count = productfromMain.count +1;
       notifyListeners();
 
     } else {
       _cart.add(productfromMain);
+      productfromMain.count = productfromMain.count +1;
       notifyListeners();
     }
   }
