@@ -36,25 +36,20 @@ List<Product> readytocookList = [
 class ProductProvider extends ChangeNotifier {
   int? tprice=0;
   final List<Product> _fish = fishList;
-
   List<Product> get fish => _fish; //getter to access list of fish in home page
 
   final List<Product> _meat = meatList;
-
   List<Product> get meat => _meat; //getter to access list of meat in home page
 
   final List<Product> _marinated = marinatedList;
-
   List<Product> get marinated =>
       _marinated; //getter to access list of marinated in home page
 
   final List<Product> _readytocook = readytocookList;
-
   List<Product> get readytocook =>
       _readytocook; //getter to access list of readytocook in home page
 
   final List<Product> _cart = [];
-
   List<Product> get cart => _cart;
 
   int total = 0;
@@ -82,16 +77,3 @@ class ProductProvider extends ChangeNotifier {
     }
   }
 }
-/*
-void addToList(Product productfromMain){
-    _cart.forEach((element){
-      if(element==productfromMain){
-        element.count=element.count+1;
-      }
-      else{
-    _cart.add(productfromMain);
-    //total=total+element.price*count;
-    notifyListeners();
-  }});}
-
- */

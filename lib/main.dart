@@ -9,14 +9,15 @@ void main() {
     ChangeNotifierProvider<ProductProvider>(
       create: (context) => ProductProvider(),
       child: MaterialApp(debugShowCheckedModeBanner: false,
-        theme:  ThemeData(primarySwatch: Colors.green).copyWith(
-            textTheme: TextTheme(
-              displayLarge: TextStyle(fontSize: 25,fontFamily:'Amaranth', color:Colors.white,fontWeight: FontWeight.bold),
+        theme:  ThemeData().copyWith(
+            textTheme:
+            TextTheme(
+              displayLarge: TextStyle(fontSize: 25,fontFamily:'Amaranth', color:Colors.green,fontWeight: FontWeight.bold),
               displayMedium: TextStyle(fontSize: 25,fontFamily:'Amaranth', color:Colors.green,fontWeight: FontWeight.bold),
               displaySmall: TextStyle(fontSize: 20,fontFamily:'Amaranth', color:Colors.black),
-              bodyLarge :TextStyle(fontSize: 18,fontFamily:'Amaranth',color:Colors.white ),
+              bodyLarge :TextStyle(fontSize: 18,fontFamily:'Amaranth',color:Colors.green ),
               bodyMedium: TextStyle(fontSize: 15,fontFamily:'Amaranth',color:Colors.black),
-              bodySmall :TextStyle(fontSize: 15,fontFamily:'Amaranth',color:Colors.white ),
+              bodySmall :TextStyle(fontSize: 15,fontFamily:'Amaranth',color:Colors.green ),
             )
         ),
         home: SplashPage(),

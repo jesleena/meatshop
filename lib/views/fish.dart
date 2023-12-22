@@ -40,32 +40,36 @@ class fish_page extends StatelessWidget {
               child: Column(
 
                 children: [
-                  Container(
-                    margin: EdgeInsets.all(3),
-                    width: 170,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),
-                      image: DecorationImage(
-                        image: AssetImage(currentProduct.image),
-                        fit: BoxFit.cover,
-                      ),),),
-                  Container(
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(3),
                       width: 170,
-
-                      child: Column(children: [
-                        Text(currentProduct.name),
-                        Text('Rs ${currentProduct.price}/-'),
-
-                        ElevatedButton(
-                            onPressed: () {
-                              context.read<ProductProvider>().addToList(currentProduct);
-                              //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Cart()));
-                            },
-                            child:
-                            Text("Add ",style: Theme.of(context).textTheme.bodySmall) ),
-
-                      ])),
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),
+                        image: DecorationImage(
+                          image: AssetImage(currentProduct.image),
+                          fit: BoxFit.cover,
+                        ),),),
+                  ),
+                  Expanded(
+                    child: Container(
+                        width: 170,
+                    
+                        child: Column(children: [
+                          Text(currentProduct.name),
+                          Text('Rs ${currentProduct.price}/-'),
+                    
+                          ElevatedButton(
+                              onPressed: () {
+                                context.read<ProductProvider>().addToList(currentProduct);
+                                //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Cart()));
+                              },
+                              child:
+                              Text("Add ",style: Theme.of(context).textTheme.bodySmall) ),
+                    
+                        ])),
+                  ),
 
                 ],), );
 

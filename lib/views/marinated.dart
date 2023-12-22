@@ -40,16 +40,18 @@ class marinated_page extends StatelessWidget {
               child: Column(
 
                 children: [
-                  Container(
-                    margin: EdgeInsets.all(3),
-                    width: 170,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),
-                      image: DecorationImage(
-                        image: AssetImage(currentProduct.image),
-                        fit: BoxFit.cover,
-                      ),),),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(3),
+                      width: 170,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),
+                        image: DecorationImage(
+                          image: AssetImage(currentProduct.image),
+                          fit: BoxFit.cover,
+                        ),),),
+                  ),
                   Container(
                       width: 170,
 
